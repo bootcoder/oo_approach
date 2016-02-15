@@ -1,16 +1,23 @@
+# var == regular var
+# @var == instance var
 
+# @@var == class var
+# $var == global var
 
 class Shift
+
   attr_reader :time
 
-  def initialize(time)
+  def initialize(time = "1234")
     @time = time
   end
 
   def to_s
     "#{@time}"
   end
+
 end
+
 
 class Job
   attr_reader :name, :shifts
@@ -24,6 +31,12 @@ class Job
     "\n------------------\n #{@name} \n------------------\n Shifts: #{@shifts.join(", ")}"
   end
 end
+
+
+
+
+
+
 
 class Volunteer
   attr_reader :name, :job, :shifts
@@ -96,6 +109,12 @@ end
 
 
 ### Driver Code
+shift = Shift.new("209384")
+
+puts shift.methods
+
+__END__
+
 # Create some shifts with a factory
 shifts = ShiftFactory.create({:times => ["Saturday morning",
                                          "Saturday afternoon",

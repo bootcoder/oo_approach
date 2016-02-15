@@ -9,7 +9,7 @@ class Bicycle
   def pedal
     p "I am pedalling and going #{gear_ratio * wheel_size} miles an hour"
   end
-  # encapulate the dependecy of the Parts object into methods
+  # encapsulate the dependecy of the Parts object into methods
   # private # optional to make these private if not needed outside the class
 
   def gear_ratio

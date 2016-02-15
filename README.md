@@ -1,6 +1,7 @@
 ## Object Oriented Problem Solving
 
 ### Vocab Quiz!
+
 - class
 - object
 - instance
@@ -12,7 +13,7 @@
 - method
 - is-a relationship (inheritance)
 - has-a relationship (composition)
-- interface
+- interface (API)
 
 
 
@@ -69,7 +70,7 @@ Lynne's been using a spreadsheet to keep track of what the jobs are, when these 
 
 
 ### Nouns and Verbs
-- nouns: jobs, shifts, volunteers
+- nouns: jobs, shifts, volunteers, coordinator
 
 
 
