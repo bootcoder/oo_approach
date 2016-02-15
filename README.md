@@ -10,9 +10,11 @@
 - encapsulation
 - attribute
 - method
-- is-a relationship
-- has-a relationship
+- is-a relationship (inheritance)
+- has-a relationship (composition)
 - interface
+
+
 
 
 
@@ -68,7 +70,6 @@ Lynne's been using a spreadsheet to keep track of what the jobs are, when these 
 
 ### Nouns and Verbs
 - nouns: jobs, shifts, volunteers
-- verbs: define jobs, define shifts, list jobs, list shifts for a job, sign up for jobs, sign up for shifts, list volunteers for a job, list volunteers for a shift, list a volunteer's job and shifts.
 
 
 
@@ -86,14 +87,15 @@ Lynne's been using a spreadsheet to keep track of what the jobs are, when these 
 ### Sketching the Objects
 - Job
   - Attributes: name, shifts
-  - Methods:
+  - Methods: define jobs, list jobs, list shifts for a job, sign up for jobs
 - Volunteer
   - Attributes: name, job, shifts
   - Methods: sign_up
 - Shift
   - Attributes: time
-  - Methods:
+  - Methods: define shifts
 
+- verbs: , , , , , list volunteers for a job, list volunteers for a shift, list a volunteer's job and shifts.
 
 
 
@@ -109,8 +111,17 @@ Lynne's been using a spreadsheet to keep track of what the jobs are, when these 
 ```ruby
 # Which one of these do we prefer and why?
 # What OO design choices does each line reflect?
+
 volunteer.sign_up(job)
 job.sign_up(volunteer)
+
+
+
+
+coordinator.sign_up(volunteer, job)
+
+system.sign_up(volunteer, job)
+
 ```
 
 

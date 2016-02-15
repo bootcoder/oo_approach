@@ -3,7 +3,7 @@
 class Shift
   attr_reader :time
 
-  def initialize(time:)
+  def initialize(time)
     @time = time
   end
 
@@ -11,27 +11,6 @@ class Shift
     "#{@time}"
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 class Job
   attr_reader :name, :shifts
@@ -45,16 +24,6 @@ class Job
     "\n------------------\n #{@name} \n------------------\n Shifts: #{@shifts.join(", ")}"
   end
 end
-
-
-
-
-
-
-
-
-
-
 
 class Volunteer
   attr_reader :name, :job, :shifts
@@ -88,26 +57,13 @@ end
 
 
 module ShiftFactory
-
+  #self.create --theres like 7 or 8 ways to make this happen. this is a good point to
+  # expose students to it.
   def self.create(times:)
     times.map { |time| Shift.new({:time => time}) }
   end
 
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 module JobFactory
 
@@ -155,11 +111,17 @@ jobs = JobFactory.create({:jobs => [
                                     {:name => "Parking Lot",        :shifts => shifts}
                                   ]})
 # Let's take a look at them
+
+
 puts "Here are the available volunteer jobs."
 puts jobs
 puts ""
 
 # Create a volunteer and sign him up for a job and some shifts
+
 volunteer_johnjoe = Volunteer.new({:name => "JohnJoe Jones"})
 volunteer_johnjoe.sign_up({:job => jobs.first, :shifts => shifts.sample(3)})
 puts volunteer_johnjoe
+
+
+
